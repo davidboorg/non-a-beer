@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { CheckoutButton } from "@/components/checkout-button";
+import { PageIntro } from "@/components/page-intro";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { formatPrice, preorderBundle } from "@/lib/products";
@@ -10,58 +10,106 @@ export default function ShopPage() {
     <main className="min-h-screen bg-[#e9eae9]">
       <SiteHeader />
 
-      <section className="px-5 py-12 md:px-8 md:py-20">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="overflow-hidden bg-black/5">
+      <PageIntro
+        headline={
+          <>
+            <span className="md:hidden">
+              Pre-order
+              <br />
+              the Non-Alcoholic Beer limited-edition
+              <br />
+              6-pack
+            </span>
+            <span className="hidden md:inline">
+              Pre-order
+              <br />
+              the Non-Alcoholic
+              <br />
+              Beer limited-edition
+              <br />
+              6-pack
+            </span>
+          </>
+        }
+        headlineClassName="mt-2 text-[43px] leading-[37.8px] font-bold tracking-[-1.3px] uppercase md:mt-4 md:text-[99px] md:leading-[90px] md:tracking-[-0.99px]"
+      >
+        <p className="mt-6 font-serif text-[12px] leading-[14px] italic tracking-[-0.04em] uppercase md:mt-8 md:text-[25px] md:leading-[14px]">
+          Reduce the risk of dying.
+        </p>
+      </PageIntro>
+
+      <section className="mt-6 px-[17px] pb-0 md:mt-10 md:px-[44px]">
+        <div className="mx-auto max-w-[1346px] space-y-8 md:space-y-12">
+          <div className="aspect-[364/323] overflow-hidden md:aspect-[1346/1195]">
             <Image
-              src={preorderBundle.image}
-              alt={preorderBundle.name}
-              width={800}
-              height={800}
+              src="/images/shop-pack.png"
+              alt="Non-Alcoholic Beer limited edition 6-pack"
+              width={1346}
+              height={1195}
               className="h-full w-full object-cover"
               priority
+              sizes="(max-width: 768px) 364px, 1346px"
             />
           </div>
 
-          <div className="flex flex-col justify-center">
-            <p className="text-[12px] tracking-[0.24px] text-[#9d9d9d] uppercase">
-              Limited pre-order
-            </p>
-            <h1 className="mt-4 text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] font-bold tracking-[-0.01em] uppercase">
-              {preorderBundle.name}
-            </h1>
-            <p className="mt-6 max-w-lg text-[14px] leading-[1.5] tracking-[0.02em]">
-              {preorderBundle.description}
-            </p>
-
-            <p className="mt-8 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-[-0.02em]">
+          <div className="text-center">
+            <p className="text-[53px] leading-[0.86] font-bold tracking-[-0.03em] uppercase md:text-[100px]">
               {formatPrice(
                 preorderBundle.priceInCents,
                 preorderBundle.currency,
               )}
             </p>
+            <p className="mx-auto mt-4 max-w-[687px] text-[17px] leading-[1.12] tracking-[0.34px] md:text-[40px] md:tracking-[0.8px]">
+              {preorderBundle.description}
+            </p>
 
-            <ul className="mt-8 space-y-2 text-[12px] tracking-[0.24px] uppercase">
-              {preorderBundle.includes.map((item) => (
-                <li key={item}>• {item}</li>
-              ))}
-            </ul>
-
-            <div className="mt-10">
+            <div className="mt-6 flex justify-center md:mt-10">
               <CheckoutButton productId={preorderBundle.id} />
             </div>
 
-            <p className="mt-6 max-w-md text-[11px] leading-[14px] tracking-[0.18px] text-[#9d9d9d] uppercase">
+            <p className="mx-auto mt-6 max-w-[789px] text-[10px] leading-[11px] tracking-[0.2px] uppercase md:mt-10 md:text-[22px] md:leading-[23.7px] md:tracking-[0.44px]">
               Secure checkout powered by Stripe. You will receive an order
-              confirmation by email. Pre-orders ship when production is complete.
+              confirmation by email. Pre-orders ship when production is
+              complete.
             </p>
+          </div>
 
-            <Link
-              href="/"
-              className="mt-8 inline-block text-[12px] font-medium tracking-[0.24px] uppercase underline underline-offset-4"
-            >
-              ← Back to home
-            </Link>
+          <div className="relative aspect-[364/323] overflow-hidden md:aspect-[1346/1195]">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+              <Image
+                src="/images/shop-detail.png"
+                alt="Person carrying Non-Alcoholic Beer 6-pack"
+                width={2048}
+                height={2048}
+                className="absolute max-w-none object-cover"
+                style={{
+                  height: "115.92%",
+                  left: "-5.22%",
+                  top: "0.08%",
+                  width: "115.87%",
+                }}
+                sizes="(max-width: 768px) 364px, 1346px"
+              />
+            </div>
+          </div>
+
+          <div className="relative aspect-[364/323] overflow-hidden md:aspect-[1346/1195]">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+              <Image
+                src="/images/shop-pack.png"
+                alt="Non-Alcoholic Beer packaging detail"
+                width={2210}
+                height={1962}
+                className="absolute max-w-none object-cover"
+                style={{
+                  height: "209.4%",
+                  left: "-70.27%",
+                  top: "-54.97%",
+                  width: "209.3%",
+                }}
+                sizes="(max-width: 768px) 364px, 1346px"
+              />
+            </div>
           </div>
         </div>
       </section>

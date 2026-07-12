@@ -14,9 +14,9 @@ export function getStripe(): Stripe {
 }
 
 export const PREORDER_PRODUCT = {
-  name: "Limited Edition 6-Pack + T-Shirt",
+  name: "Limited Edition 6-Pack",
   description:
-    "Pre-order the Non-Alcoholic Beer limited-edition 6-pack and exclusive T-shirt bundle.",
-  priceInCents: 49900,
+    "6× Non-Alcoholic Beer cans (500 ml) in limited edition 6-pack design.",
+  priceInCents: 39900,
   currency: "sek" as const,
 };

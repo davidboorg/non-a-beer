@@ -5,11 +5,13 @@ import { useState } from "react";
 type CheckoutButtonProps = {
   productId: string;
   label?: string;
+  className?: string;
 };
 
 export function CheckoutButton({
   productId,
-  label = "Pre-order now",
+  label = "Pre-order",
+  className = "",
 }: CheckoutButtonProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -39,17 +41,17 @@ export function CheckoutButton({
   }
 
   return (
-    <div className="space-y-3">
+    <div className={`space-y-3 ${className}`}>
       <button
         type="button"
         onClick={handleCheckout}
         disabled={loading}
-        className="inline-flex min-h-14 w-full items-center justify-center bg-black px-8 py-4 text-[14px] font-bold tracking-[0.24px] text-white uppercase transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto"
+        className="inline-flex h-[51px] min-w-[169px] items-center justify-center rounded-full bg-black px-8 text-[17px] font-medium tracking-[0.34px] text-white uppercase transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:h-[101px] md:min-w-[335px] md:text-[35px] md:tracking-[0.7px]"
       >
-        {loading ? "Redirecting to checkout…" : label}
+        {loading ? "Redirecting…" : label}
       </button>
       {error ? (
-        <p className="text-[12px] text-red-600 uppercase">{error}</p>
+        <p className="text-center text-[12px] text-red-600 uppercase">{error}</p>
       ) : null}
     </div>
   );

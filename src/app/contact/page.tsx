@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { PageIntro } from "@/components/page-intro";
 
 type ContactPageProps = {
   searchParams: Promise<{ intent?: string }>;
@@ -13,41 +13,56 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   return (
     <main className="min-h-screen bg-[#e9eae9]">
       <SiteHeader />
-      <section className="px-5 py-16 md:px-8 md:py-24">
-        <div className="mx-auto max-w-3xl">
-          <p className="font-serif text-[clamp(1.25rem,2.5vw,1.56rem)] italic tracking-[-0.04em]">
-            Contact
-          </p>
-          <h1 className="mt-6 text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] font-bold tracking-[-0.01em] uppercase">
-            {isLobbyist
-              ? "We hear you, lobbyist"
-              : "Get in touch"}
-          </h1>
-          <p className="mt-8 text-[14px] leading-[1.6]">
-            {isLobbyist
-              ? "If you are a pro alcohol lobbyist who wants to burn this to the ground, we appreciate your passion. Send your manifesto, cease-and-desist, or strongly worded email to:"
-              : "Questions about Non-Alcoholic Beer, pre-orders, or partnerships? Send us a message at:"}
-          </p>
-          <a
-            href={
-              isLobbyist
-                ? "mailto:lobbyist@surprisesystems.io"
-                : "mailto:hello@surprisesystems.io"
-            }
-            className="mt-6 inline-block text-[18px] font-bold tracking-[-0.01em] uppercase underline underline-offset-4"
-          >
-            {isLobbyist
-              ? "lobbyist@surprisesystems.io"
-              : "hello@surprisesystems.io"}
-          </a>
-          <Link
-            href="/"
-            className="mt-10 block text-[12px] font-medium tracking-[0.24px] uppercase underline underline-offset-4"
-          >
-            ← Back to home
-          </Link>
+
+      <PageIntro
+        subtitle="Contact"
+        headline={isLobbyist ? "We hear you, lobbyist" : "Get in touch!"}
+        headlineClassName="mt-2 text-[53px] leading-[45.8px] font-bold tracking-[-1.6px] uppercase md:mt-4 md:text-[99px] md:leading-[90px] md:tracking-[-0.99px]"
+      />
+
+      <section className="px-5 pb-0 text-center md:px-8">
+        <p className="mx-auto max-w-[348px] text-[12px] leading-[14px] tracking-[0.24px] uppercase">
+          {isLobbyist ? (
+            <>
+              If you are a pro alcohol lobbyist who wants to burn this project
+              to the ground, send your manifesto to:
+              <br />
+              <br />
+              <a
+                href="mailto:lobbyist@surprisesystems.io"
+                className="underline underline-offset-4"
+              >
+                lobbyist@surprisesystems.io
+              </a>
+            </>
+          ) : (
+            <>
+              Questions about Non-Alcoholic Beer, pre-orders, or partnerships?
+              Send us a message at:
+              <br />
+              <br />
+              <a
+                href="mailto:info@thenonalcoholicbeer.com"
+                className="underline underline-offset-4"
+              >
+                info@thenonalcoholicbeer.com
+              </a>
+            </>
+          )}
+        </p>
+
+        <div className="relative mx-auto mt-8 max-w-[1467px] overflow-hidden md:mt-12">
+          <div className="aspect-[1467/1800] w-full overflow-hidden md:aspect-[1467/2200]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/hero-can-new.png"
+              alt=""
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
         </div>
       </section>
+
       <SiteFooter />
     </main>
   );

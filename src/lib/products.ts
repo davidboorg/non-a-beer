@@ -10,16 +10,15 @@ export type Product = {
 
 export const preorderBundle: Product = {
   id: "preorder-bundle",
-  name: "Limited Edition 6-Pack + T-Shirt",
+  name: "Limited Edition 6-Pack",
   description:
-    "Pre-order the Non-Alcoholic Beer limited-edition 6-pack and exclusive T-shirt bundle. Ships when production is complete.",
-  priceInCents: 49900,
+    "6× Non-Alcoholic Beer cans (500 ml) in limited edition 6-pack design.",
+  priceInCents: 39900,
   currency: "sek",
-  image: "/images/hero-can.png",
+  image: "/images/shop-pack.png",
   includes: [
-    "6× Non-Alcoholic Beer cans (330 ml)",
-    "1× Limited-edition T-shirt",
-    "Certificate of non-lethality",
+    "6× Non-Alcoholic Beer cans (500 ml)",
+    "Limited edition 6-pack design",
   ],
 };
 

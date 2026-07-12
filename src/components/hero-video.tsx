@@ -41,7 +41,7 @@ export function HeroVideo() {
       preload="auto"
       controls={false}
       disablePictureInPicture
-      className="block h-auto w-full object-cover"
+      className="block h-full w-full object-cover"
       aria-label="Non-Alcoholic Beer product film"
     >
       <source src="/video/hero.mp4" type="video/mp4" />

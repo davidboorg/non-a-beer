@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const menuItems = [
   { href: "/shop", label: "Pre-order" },
@@ -7,52 +10,76 @@ const menuItems = [
   { href: "/contact", label: "Contact" },
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ showLogo = true }: { showLogo?: boolean }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="relative px-[21px] pt-[21px] md:px-[38px]">
-      <div className="flex items-start justify-between gap-6">
-        <div className="max-w-[286px]">
+    <header className="relative px-[11px] pt-[14px] md:px-[21px] md:pt-[21px]">
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex max-w-[174px] items-start gap-2 md:max-w-none md:gap-0">
           <Image
             src="/images/logo-small.png"
             alt="Surprise Systems"
             width={44}
             height={27}
-            className="h-[27px] w-auto"
+            className="h-[14px] w-auto shrink-0 md:mt-0 md:h-[27px]"
           />
-          <p className="mt-4 text-[9px] leading-[9px] tracking-[0.18px] text-[#9d9d9d] uppercase">
+          <p className="text-[4.8px] leading-[4.8px] tracking-[0.1px] text-[#9d9d9d] uppercase md:ml-4 md:max-w-[174px] md:text-[9px] md:leading-[9px] md:tracking-[0.18px]">
             Non-Alcoholic Beer is a non-lethal certified product launched by
             Surprise Systems™
           </p>
         </div>
 
-        <details className="relative">
-          <summary className="cursor-pointer list-none pt-0.5 text-[12px] font-medium tracking-[0.24px] uppercase">
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            className={`cursor-pointer text-[12px] font-medium tracking-[0.24px] uppercase underline ${
+              menuOpen ? "text-white" : "text-black"
+            }`}
+            aria-expanded={menuOpen}
+          >
             Menu
-          </summary>
-          <div className="absolute right-0 z-50 mt-3 min-w-40 border border-black/10 bg-[#e9eae9] p-4">
-            {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block py-2 text-[12px] font-medium tracking-[0.24px] uppercase"
+          </button>
+
+          {menuOpen ? (
+            <div className="absolute right-0 top-0 z-50 flex h-[143px] w-[142px] flex-col bg-black px-4 pt-4">
+              <button
+                type="button"
+                onClick={() => setMenuOpen(false)}
+                className="cursor-pointer text-left text-[12px] font-medium tracking-[0.24px] text-white uppercase underline"
               >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </details>
+                Menu
+              </button>
+              <nav className="mt-4 space-y-1">
+                {menuItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block text-[12px] font-medium tracking-[0.24px] text-white uppercase"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          ) : null}
+        </div>
       </div>
 
-      <div className="mt-4 flex justify-center md:mt-6">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/logo-a.svg"
-          alt="Non-Alcoholic Beer mark"
-          width={164}
-          height={187}
-          className="h-[187px] w-[164px]"
-        />
-      </div>
+      {showLogo ? (
+        <div className="mt-2 flex justify-center md:mt-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo-a.svg"
+            alt="Non-Alcoholic Beer mark"
+            width={164}
+            height={187}
+            className="h-[92px] w-[81px] md:h-[187px] md:w-[164px]"
+          />
+        </div>
+      ) : null}
     </header>
   );
 }
