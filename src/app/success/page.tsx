@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 
 export default function SuccessPage() {
   return (
-    <main className="min-h-screen bg-[#e9eae9]">
+    <main className="min-h-screen bg-background">
       <SiteHeader />
       <section className="px-5 py-24 text-center md:px-8">
         <div className="mx-auto max-w-2xl">

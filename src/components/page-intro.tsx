@@ -22,7 +22,7 @@ export function PageIntro({
       </p>
 
       {subtitle ? (
-        <p className="mt-4 font-serif text-[12px] leading-[14px] italic tracking-[-0.04em] uppercase md:mt-6 md:text-[25px] md:leading-[14px]">
+        <p className="mt-4 font-serif text-[12px] leading-[14px] italic tracking-[-0.04em] uppercase md:mt-6 md:text-[25px] md:leading-[28px]">
           {subtitle}
         </p>
       ) : null}
@@ -30,7 +30,7 @@ export function PageIntro({
       <h1
         className={
           headlineClassName ??
-          "mt-2 text-[clamp(2.5rem,6.9vw,6.19rem)] leading-[0.91] font-bold tracking-[-0.01em] uppercase md:mt-4"
+          "mt-2 mb-6 text-[clamp(2.5rem,6.9vw,6.19rem)] leading-[0.91] font-bold tracking-[-0.01em] uppercase md:mt-4 md:mb-8"
         }
       >
         {headline}

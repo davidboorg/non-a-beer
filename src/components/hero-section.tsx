@@ -27,7 +27,7 @@ export function HeroSection() {
             </span>
           </>
         }
-        headlineClassName="mt-2 text-[53px] leading-[45.8px] font-bold tracking-[-1.6px] uppercase md:mt-4 md:text-[99px] md:leading-[90px] md:tracking-[-0.99px]"
+        headlineClassName="mt-2 mb-6 text-[43px] leading-[1.1] font-bold tracking-[-1.3px] uppercase md:mt-4 md:mb-8 md:text-[99px] md:leading-[1] md:tracking-[-0.99px]"
       >
         <p className="mt-6 font-serif text-[12px] leading-[14px] italic tracking-[-0.04em] uppercase md:mt-8 md:text-[25px]">
           Reduce the risk of dying.

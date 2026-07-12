@@ -7,7 +7,7 @@ import { formatPrice, preorderBundle } from "@/lib/products";
 
 export default function ShopPage() {
   return (
-    <main className="min-h-screen bg-[#e9eae9]">
+    <main className="min-h-screen bg-background">
       <SiteHeader />
 
       <PageIntro
@@ -31,7 +31,7 @@ export default function ShopPage() {
             </span>
           </>
         }
-        headlineClassName="mt-2 text-[43px] leading-[37.8px] font-bold tracking-[-1.3px] uppercase md:mt-4 md:text-[99px] md:leading-[90px] md:tracking-[-0.99px]"
+        headlineClassName="mt-2 mb-6 text-[43px] leading-[1.1] font-bold tracking-[-1.3px] uppercase md:mt-4 md:mb-8 md:text-[99px] md:leading-[1] md:tracking-[-0.99px]"
       >
         <p className="mt-6 font-serif text-[12px] leading-[14px] italic tracking-[-0.04em] uppercase md:mt-8 md:text-[25px] md:leading-[14px]">
           Reduce the risk of dying.

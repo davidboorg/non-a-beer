@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 
 export default function HomePage() {
   return (
-    <main className="bg-[#e9eae9]">
+    <main className="bg-background">
       <SiteHeader />
       <HeroSection />
       <PathwaysSection />
