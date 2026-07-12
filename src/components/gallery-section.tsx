@@ -75,7 +75,7 @@ function GalleryDisclaimer() {
 
 export function GallerySection() {
   return (
-    <section className="px-[17px] py-12 md:px-[38px] md:py-24">
+    <section className="bg-background px-[17px] py-12 md:px-[38px] md:py-24">
       <div className="mx-auto max-w-[1364px]">
         <div className="hidden items-start gap-[63px] lg:grid lg:grid-cols-[300px_minmax(0,1fr)]">
           <GalleryDisclaimer />

@@ -36,7 +36,7 @@ export function PathwaysSection() {
   return (
     <section className="bg-black px-5 py-12 text-white md:px-8 md:py-20">
       <div className="mx-auto max-w-[982px] text-center">
-        <p className="font-serif text-[12px] leading-[14px] italic tracking-[-0.04em] uppercase md:text-[25px]">
+        <p className="font-serif text-[12px] leading-[14px] italic tracking-[-0.04em] uppercase md:text-[25px] md:leading-[28px]">
           What do you want?
         </p>
 

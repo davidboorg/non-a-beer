@@ -24,7 +24,7 @@ export function SiteHeader({ showLogo = true }: { showLogo?: boolean }) {
             height={27}
             className="h-[14px] w-auto shrink-0 md:mt-0 md:h-[27px]"
           />
-          <p className="text-[4.8px] leading-[4.8px] tracking-[0.1px] text-[#9d9d9d] uppercase md:ml-4 md:max-w-[174px] md:text-[9px] md:leading-[9px] md:tracking-[0.18px]">
+          <p className="text-[4.8px] leading-[4.8px] tracking-[0.1px] text-muted uppercase md:ml-4 md:max-w-[174px] md:text-[9px] md:leading-[9px] md:tracking-[0.18px]">
             Non-Alcoholic Beer is a non-lethal certified product launched by
             Surprise Systems™
           </p>

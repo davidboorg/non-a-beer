@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Non-Alcoholic Beer — Probably the least lethal beer in the world",
   description:
     "The official site of Non-Alcoholic Beer. The harmless alternative to destructive alcoholic beverages. Pre-order the limited-edition 6-pack and T-shirt.",
+  themeColor: "#c7c7c7",
   openGraph: {
     title: "Non-Alcoholic Beer",
     description: "Probably the least lethal beer in the world.",
@@ -37,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-full">{children}</body>
+    <html lang="en" className="h-full bg-background">
+      <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>
   );
 }
