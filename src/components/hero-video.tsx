@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export function HeroVideo() {
+export function HeroVideo({ className = "" }: { className?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export function HeroVideo() {
       preload="auto"
       controls={false}
       disablePictureInPicture
-      className="block h-full w-full object-cover"
+      className={`block h-full w-full ${className}`}
       aria-label="Non-Alcoholic Beer product film"
     >
       <source src="/video/hero.mp4" type="video/mp4" />

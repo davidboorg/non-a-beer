@@ -34,7 +34,7 @@ export function SiteHeader({ showLogo = true }: { showLogo?: boolean }) {
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
-            className={`cursor-pointer text-[12px] font-medium tracking-[0.24px] uppercase underline ${
+            className={`cursor-pointer text-[12px] font-bold tracking-[0.24px] uppercase underline ${
               menuOpen ? "text-white" : "text-black"
             }`}
             aria-expanded={menuOpen}
@@ -43,11 +43,11 @@ export function SiteHeader({ showLogo = true }: { showLogo?: boolean }) {
           </button>
 
           {menuOpen ? (
-            <div className="absolute right-0 top-0 z-50 flex h-[143px] w-[142px] flex-col bg-black px-4 pt-4">
+            <div className="absolute right-0 top-0 z-50 flex h-[143px] w-[142px] flex-col items-end bg-black px-4 pt-4 text-right">
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
-                className="cursor-pointer text-left text-[12px] font-medium tracking-[0.24px] text-white uppercase underline"
+                className="cursor-pointer text-[12px] font-bold tracking-[0.24px] text-white uppercase underline"
               >
                 Menu
               </button>
@@ -57,7 +57,7 @@ export function SiteHeader({ showLogo = true }: { showLogo?: boolean }) {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="block text-[12px] font-medium tracking-[0.24px] text-white uppercase"
+                    className="block text-[12px] font-bold tracking-[0.24px] text-white uppercase"
                   >
                     {item.label}
                   </Link>
