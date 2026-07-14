@@ -8,7 +8,9 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     "https://thenonalcoholicbeer.com",
   locale: "en_US",
-  ogImage: "/images/gallery-main.png",
+  ogImage: "/images/gallery-main.jpg",
+  ogImageWidth: 1024,
+  ogImageHeight: 1024,
   contactEmail: "info@thenonalcoholicbeer.com",
 } as const;
 

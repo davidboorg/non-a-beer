@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteJsonLd } from "@/components/json-ld";
-import { siteConfig, absoluteUrl } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.ogImage,
-        width: 1001,
-        height: 1001,
+        width: siteConfig.ogImageWidth,
+        height: siteConfig.ogImageHeight,
         alt: siteConfig.name,
       },
     ],

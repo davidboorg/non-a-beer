@@ -24,10 +24,12 @@ const desktopThumbnails = [
   },
 ];
 
+const galleryMainAlt = "Non-Alcoholic Beer cans in ice";
+
 const mobileGallery = [
   {
-    src: "/images/gallery-main.png",
-    alt: "Non-Alcoholic Beer cans in a crate",
+    src: "/images/gallery-main.jpg",
+    alt: galleryMainAlt,
     crop: null,
   },
   {
@@ -81,10 +83,10 @@ export function GallerySection() {
           <GalleryDisclaimer />
           <div className="aspect-square w-full overflow-hidden">
             <Image
-              src="/images/gallery-main.png"
-              alt="Non-Alcoholic Beer cans in a crate"
-              width={1001}
-              height={1001}
+              src="/images/gallery-main.jpg"
+              alt={galleryMainAlt}
+              width={1024}
+              height={1024}
               className="h-full w-full object-cover"
             />
           </div>
