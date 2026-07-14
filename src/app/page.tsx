@@ -3,6 +3,9 @@ import { GallerySection } from "@/components/gallery-section";
 import { HeroSection } from "@/components/hero-section";
 import { PathwaysSection } from "@/components/pathways-section";
 import { SiteHeader } from "@/components/site-header";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({ path: "/" });
 
 export default function HomePage() {
   return (

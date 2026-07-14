@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Order Confirmed",
+  description: "Your Non-Alcoholic Beer pre-order is confirmed.",
+  path: "/success",
+  noIndex: true,
+});
 
 export default function SuccessPage() {
   return (

@@ -35,7 +35,7 @@ export function HeroSection() {
       </PageIntro>
 
       <div className="relative mt-6 overflow-hidden bg-background md:mt-10">
-        <div className="relative left-[-15%] aspect-[525/560] w-[131%] max-w-none md:left-0 md:mx-auto md:aspect-[860/950] md:w-full md:max-w-[860px]">
+        <div className="relative left-[-15%] aspect-[525/922] w-[131%] max-w-none md:left-0 md:mx-auto md:aspect-[860/1511] md:w-full md:max-w-[860px]">
           <HeroVideo className="object-cover object-top" />
         </div>
       </div>

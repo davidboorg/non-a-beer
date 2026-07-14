@@ -20,7 +20,7 @@ export function CanVideoSection({ showBackLink = false }: CanVideoSectionProps) 
       ) : null}
 
       <div className="relative mx-auto mt-4 max-w-[860px] overflow-hidden bg-background md:mt-6">
-        <div className="relative left-[-15%] aspect-[525/560] w-[131%] max-w-none md:left-0 md:mx-auto md:aspect-[860/950] md:w-full">
+        <div className="relative left-[-15%] aspect-[525/922] w-[131%] max-w-none md:left-0 md:mx-auto md:aspect-[860/1511] md:w-full">
           <HeroVideo className="object-cover object-top" />
         </div>
       </div>

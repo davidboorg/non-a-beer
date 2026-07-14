@@ -2,6 +2,14 @@ import { CanVideoSection } from "@/components/can-video-section";
 import { PageIntro } from "@/components/page-intro";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Press & Influencers",
+  description:
+    "Official press assets and media inquiries for Non-Alcoholic Beer. Download image assets and contact Surprise Systems for interviews and collaborations.",
+  path: "/press",
+});
 
 export default function PressPage() {
   return (

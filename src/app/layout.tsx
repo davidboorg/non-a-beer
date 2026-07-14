@@ -1,34 +1,54 @@
 import type { Metadata } from "next";
+import { SiteJsonLd } from "@/components/json-ld";
+import { siteConfig, absoluteUrl } from "@/lib/site";
 import "./globals.css";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://non-a-beer.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Non-Alcoholic Beer — Probably the least lethal beer in the world",
-  description:
-    "The official site of Non-Alcoholic Beer. The harmless alternative to destructive alcoholic beverages. Pre-order the limited-edition 6-pack and T-shirt.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    template: `%s — ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.company }],
+  creator: siteConfig.company,
+  publisher: siteConfig.company,
+  category: "Food & Drink",
   themeColor: "#c7c7c7",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Non-Alcoholic Beer",
-    description: "Probably the least lethal beer in the world.",
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
     type: "website",
-    url: siteUrl,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
     images: [
       {
-        url: "/images/gallery-main.png",
+        url: siteConfig.ogImage,
         width: 1001,
         height: 1001,
-        alt: "Non-Alcoholic Beer",
+        alt: siteConfig.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Non-Alcoholic Beer",
-    description: "Probably the least lethal beer in the world.",
-    images: ["/images/gallery-main.png"],
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -39,7 +59,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full bg-background">
-      <body className="min-h-full bg-background text-foreground">{children}</body>
+      <body className="min-h-full bg-background text-foreground">
+        <SiteJsonLd />
+        {children}
+      </body>
     </html>
   );
 }

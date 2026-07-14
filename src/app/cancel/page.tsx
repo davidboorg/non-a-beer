@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Checkout Cancelled",
+  description: "Your Non-Alcoholic Beer checkout was cancelled.",
+  path: "/cancel",
+  noIndex: true,
+});
 
 export default function CancelPage() {
   return (

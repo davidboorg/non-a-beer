@@ -1,11 +1,28 @@
+import type { Metadata } from "next";
 import { CanVideoSection } from "@/components/can-video-section";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { PageIntro } from "@/components/page-intro";
+import { createPageMetadata } from "@/lib/metadata";
 
 type ContactPageProps = {
   searchParams: Promise<{ intent?: string }>;
 };
+
+export async function generateMetadata({
+  searchParams,
+}: ContactPageProps): Promise<Metadata> {
+  const { intent } = await searchParams;
+  const isLobbyist = intent === "lobbyist";
+
+  return createPageMetadata({
+    title: isLobbyist ? "Lobbyist Inbox" : "Contact",
+    description: isLobbyist
+      ? "Send your manifesto to the Non-Alcoholic Beer lobbyist inbox at Surprise Systems."
+      : "Contact Surprise Systems about Non-Alcoholic Beer pre-orders, partnerships, and general inquiries.",
+    path: isLobbyist ? "/contact?intent=lobbyist" : "/contact",
+  });
+}
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {
   const { intent } = await searchParams;

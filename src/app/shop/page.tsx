@@ -1,13 +1,24 @@
 import Image from "next/image";
 import { CheckoutButton } from "@/components/checkout-button";
+import { ProductJsonLd } from "@/components/json-ld";
 import { PageIntro } from "@/components/page-intro";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { createPageMetadata } from "@/lib/metadata";
 import { formatPrice, preorderBundle } from "@/lib/products";
+
+export const metadata = createPageMetadata({
+  title: "Pre-order",
+  description:
+    "Pre-order the Non-Alcoholic Beer limited-edition 6-pack. 6× 500 ml cans with secure Stripe checkout from Surprise Systems.",
+  path: "/shop",
+  ogImage: "/images/shop-pack.png",
+});
 
 export default function ShopPage() {
   return (
     <main className="min-h-screen bg-background">
+      <ProductJsonLd />
       <SiteHeader />
 
       <PageIntro
